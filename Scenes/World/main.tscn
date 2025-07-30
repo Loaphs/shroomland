@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://yes78xgpv5dd"]
+[gd_scene load_steps=7 format=3 uid="uid://yes78xgpv5dd"]
 
-[ext_resource type="Script" uid="uid://f1vqc2vp4qix" path="res://Scenes/World/main.gd" id="1_ntgcc"]
 [ext_resource type="MeshLibrary" uid="uid://cba70i1j775o5" path="res://TestMeshLib.tres" id="2_qvtyt"]
 [ext_resource type="Script" uid="uid://7jhlkxptb0wo" path="res://Scripts/Player/camera_follow.gd" id="2_xhtl2"]
 [ext_resource type="PackedScene" uid="uid://dqdjd103ysagw" path="res://Scenes/Organisms/Characters/character.tscn" id="4_by2pg"]
@@ -10,7 +9,6 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ntgcc"]
 
 [node name="Main" type="Node3D"]
-script = ExtResource("1_ntgcc")
 
 [node name="Camera Follow" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.734026, 0.679121, 0, -0.679121, 0.734026, 0, 12.4455, 12.0801)
@@ -25,7 +23,8 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Character" parent="." instance=ExtResource("4_by2pg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.42825, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.607, 1.5)
+move_frames = 5
 metadata/Creature = ExtResource("5_23yoc")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

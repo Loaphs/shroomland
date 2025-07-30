@@ -15,11 +15,11 @@ func _process(delta):
 	position.x += direction * speed * delta
 """
 @export var move_frames : int
-@export var move_queue : PackedVector2Array
-@export var moving : bool
+var move_queue : PackedVector2Array
+var moving : bool
 
 var current_grid_position: Vector2
 
 
 func _ready():
-	position = Vector3(1, 3, 0)
+	position = Vector3(1, 2.75, 1)
