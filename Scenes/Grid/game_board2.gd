@@ -15,6 +15,8 @@ var grid_world_center : Vector3i
 var cell : Vector2
 var total_movement : Vector2
 
+var moving : bool
+
 
 var grid : GridMap
 var player : Node3D
@@ -26,7 +28,7 @@ var selected_creature
 func _ready():
 	grid = $"../GridMap"
 	player = $"../Character"
-	player.moving = false
+	moving = false
 	used_cells = grid.get_used_cells()
 	enter_combat()
 	creatures.append(player)
@@ -89,7 +91,7 @@ func set_move(creature):
 	selected_creature = creature
 	if !selected_creature.moving: # INITIATE MOVEMENT SEQUENCE
 		print('start')
-		selected_creature.moving = true
+		moving = true
 	else:
 		print('already moving')
 		
@@ -123,7 +125,7 @@ func move():
 	print(creature_grid)
 	
 	# END MOVE SEQUENCE
-	selected_creature.moving = false
+	moving = false
 	
 # HANDLES ALL INPUT (DUE TO TURN BASED, NO NEED FOR _process() (FRAME UPDATES)
 func _unhandled_input(event):
